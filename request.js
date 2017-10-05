@@ -9,8 +9,6 @@ const zoom = require('zoomus')({
 const app = express();
 app.use(bodyParser.json());
 
-// const startDate = moment().format().split('-').join('%2F').slice(0,14);
-// console.log(startDate);
 let dashboard = {
   type: 2,
   from: '2017-10-03',
@@ -18,42 +16,28 @@ let dashboard = {
 }
 
 const testCB = (username) => {
-  return username+'*';
-}
-
-const getUsers = (group) => {
-  console.log('Listing meeting participants...');
-  let arr = [];
-  group.forEach((participant) => {
-    if (!participant) console.log('no participant');
-      //console.log(testCB(participant.user_name));
-    arr.push(testCB(participant.user_name));
-  })
-  console.log(arr);
-  console.log('Success');
+  return username+' checked ';
 }
 
 const getDetail = (ids) => {
   let classTitle = [];
   console.log('Getting meeting participants...');
-  ids.forEach((id) => {
+  ids.forEach((id, i) => {
     dashboard = {
       meeting_id: id,
       type: 2
     }
+    let thisGroup = [];
     zoom.dashboard.meeting(dashboard, (res) => {
       if (res.error) console.log('error on getDetail');
-      const group = [res];
-      group.forEach((meeting) => {
-        if (!meeting.participants) console.log('error Detail');
-        getUsers(meeting.participants);
-      });
-
-      //[[{}{}{}][{}{}{}][{}]]
-      //res= {participants}{participants}{participants}{participants:[{users}]}
-      //getUsers([group]);
+      let meetingDetail = res.participants;
+      if (meetingDetail !== undefined) {
+        meetingDetail.forEach((person) => {
+          thisGroup.push(testCB(person.user_name));
+        })
+      }
+      console.log('Meeting '+i+': '+thisGroup);
     })
-    //console.log(classTitle);
   })
 }
 
