@@ -1,25 +1,21 @@
-const creds = require('./clientsec.json');
 const express = require('express');
 const bodyParser = require('body-parser');
 const moment = require('moment');
-/* Update to import creds */
-const api_key = '';
-const api_secret = '';
+const zoomKey = require('./zCreds.json');
+const gCreds = require('./gCreds.json');
 const zoom = require('zoomus')({
-  'key': api_key,
-  'secret': api_secret
+  'key': zoomKey.key,
+  'secret': zoomKey.secret
 });
 
 const app = express();
 app.use(bodyParser.json());
 
 /* Dashboard type 2 is past, 1 is live meetings. */
-/* Update date range with moment.js so date range is automatically set to current day */
-
 let dashboard = {
   type: 2,
-  to: '2017-10-25',
-  from: '2017-10-25',
+  from: moment().format('YYYY-MM-DD'),
+  to: moment().format('YYYY-MM-DD'),
 }
 
 /* Placeholder CB, replace with CB to Google Sheet */
