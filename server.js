@@ -28,23 +28,25 @@ const getDetail = (ids) => {
   console.log('Getting meeting participants...');
   /* Iterates over ids array and updates dashboard for each one with meeting_id: id */
   ids.forEach((id, i) => {
-    dashboard = {
-      meeting_id: id,
-      type: 2
-    }
-    zoom.dashboard.meeting(dashboard, (res) => {
-      let thisGroup = [];
-      if (res.error) console.log('error on getDetail');
-      let meetingDetail = res.participants;
-      if (meetingDetail !== undefined) {
-        /* Pass each user_name to CB and push result to thisGroup */
-        meetingDetail.forEach((person) => {
-          thisGroup.push(testCB(person.user_name));
-        })
+    setTimeout(() => {
+      dashboard = {
+        meeting_id: id,
+        type: 2
       }
-      /* logs list of participants in thisGroup array, sorted alphabetically (case-sensitive) */
-      console.log(thisGroup.sort());
-    })
+      zoom.dashboard.meeting(dashboard, (res) => {
+        let thisGroup = [];
+        if (res.error) console.log('error on getDetail');
+        let meetingDetail = res.participants;
+        if (meetingDetail !== undefined) {
+          /* Pass each user_name to CB and push result to thisGroup */
+          meetingDetail.forEach((person) => {
+            thisGroup.push(testCB(person.user_name));
+          })
+        }
+        /* logs list of participants in thisGroup array, sorted alphabetically (case-sensitive) */
+        console.log(thisGroup.sort());
+      })
+    }, 5000);
   })
 }
 
