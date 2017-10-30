@@ -31,7 +31,8 @@ const getDetail = (ids) => {
     setTimeout(() => {
       dashboard = {
         meeting_id: id,
-        type: 2
+        type: 2,
+        page_size: 100
       }
       zoom.dashboard.meeting(dashboard, (res) => {
         let thisGroup = [];
