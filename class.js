@@ -34,36 +34,40 @@ const returnClass = (List) => {
     const cs3_attendees = [];
     const cs4_attendees = [];
     List.forEach((ele) => {
-        if(cs1.includes(ele)) {
+        if (cs1.includes(ele)) {
              cs1_attendees.push(ele);
         }  
-        if(cs2.includes(ele)) {
+        if (cs2.includes(ele)) {
              cs2_attendees.push(ele);
         }  
-        if(cs3.includes(ele)) {
+        if (cs3.includes(ele)) {
              cs3_attendees.push(ele);
         }  
-        if(cs4.includes(ele)) {
+        if (cs4.includes(ele)) {
              cs4_attendees.push(ele);
         }
-    })
-    if(cs1_attendees.length) {
+    });
+    if (cs1_attendees.length > 0) {
         console.log("This list belongs to CS1");
-        return cs1_attendees;
-    } else if(cs2_attendees.length) {
+        console.log(cs1_attendees);
+    } 
+    if (cs2_attendees.length > 0) {
         console.log("This list belongs to CS2");
-        return cs2_attendees;
-    } else if(cs3_attendees.length) {
+        console.log(cs2_attendees);
+    } 
+    if (cs3_attendees.length > 0) {
         console.log("This list belongs to CS3");
-        return cs3_attendees;
-    } else if(cs4_attendees.length) {
+        console.log(cs3_attendees);
+    } 
+     if (cs4_attendees.length > 0) {
         console.log("This list belongs to CS4");
-        return cs4_attendees;
+        console.log(cs4_attendees);
     }
 };
 
 
-console.log(returnClass(['Alex Cassel','satish','Emily','Tai the tai', 'Alex Figliolia', 'Alex(andra) Novak','Austin French',
+
+console.log(returnClass(['Alex Cassel', 'Alex Figliolia', 'Alex(andra) Novak','Austin French',
 'Bhavik Ravani','Brenda Estrada','Cassidy Avery','Christian Franco',
 'Christopher Coggins (Sondro)','Christy Crites','Consuella Moore','Dan Volosnikov',
 'David Long','Donnie Utley','Ellen Nitchals','Irish Sean Valdivia',
