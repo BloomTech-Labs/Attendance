@@ -1,7 +1,7 @@
 {
   "name": "attendance",
   "version": "0.0.1",
-  "description": "",
+  "description": "Attendance tracking program for Lambda School.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,6 +15,16 @@
     "google-auth-library": "^0.11.0",
     "googleapis": "^22.2.0",
     "moment": "^2.19.1",
+    "throttled-queue": "^1.0.5",
     "zoomus": "^0.1.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lambda-School-Labs/Attendance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lambda-School-Labs/Attendance/issues"
+  },
+  "homepage": "https://github.com/Lambda-School-Labs/Attendance#readme"
 }
