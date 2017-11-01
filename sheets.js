@@ -4,7 +4,7 @@ const google = require('googleapis');
 const googleAuth = require('google-auth-library');
 const gCreds = require('./gCreds.json');
 
-/* Google Quickstart Auth */
+/* GQuickstart Auth */
 
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
