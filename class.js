@@ -28,25 +28,28 @@ const cs4 = ['Alex Cassel', 'Alex Figliolia', 'Alex(andra) Novak','Austin French
     'Sneha Thadani','Sophie Muller','Susanna McDonald', 'Teresa Strout', 'Thomas Dillard','Travis Jones',
     'Tyler Sanford']
 
-const returnClass = (List) => {
+const returnClass = (list) => {
     const cs1_attendees = [];
     const cs2_attendees = [];
     const cs3_attendees = [];
     const cs4_attendees = [];
-    List.forEach((ele) => {
-        if (cs1.includes(ele)) {
-             cs1_attendees.push(ele);
+    for ( let i = 0; i <= list.length -1; i++) {
+        
+        if (cs1.includes(list[i])) {
+             cs1_attendees.push(list[i]);
         }  
-        if (cs2.includes(ele)) {
-             cs2_attendees.push(ele);
+        if (cs2.includes(list[i])) {
+             cs2_attendees.push(list[i]);
         }  
-        if (cs3.includes(ele)) {
-             cs3_attendees.push(ele);
+        if (cs3.includes(list[i])) {
+             cs3_attendees.push(list[i]);
         }  
-        if (cs4.includes(ele)) {
-             cs4_attendees.push(ele);
+        if (cs4.includes(list[i])) {
+             cs4_attendees.push(list[i]);
         }
-    });
+
+    }
+
     if (cs1_attendees.length > 0) {
         console.log("This list belongs to CS1");
         console.log(cs1_attendees);
@@ -77,4 +80,7 @@ console.log(returnClass(['Alex Cassel', 'Alex Figliolia', 'Alex(andra) Novak','A
 'Nick Mckinley','Nicole Phillips','Patsakorn Wonghnasa','Perry Ahern','Rashmi Baheti',
 'RJay Ortiz','Ronald Cho','Ronald Goodwin','Ronald Willis','Samuel Kim','Sherial Elias Jawed',
 'Sneha Thadani','Sophie Muller','Susanna McDonald', 'Teresa Strout', 'Thomas Dillard','Travis Jones',
-'Tyler Sanford']));
+'Tyler Sanford','Anthony Tweed','Brandon Fizer','Bryson Hilton','Christopher Atoki',
+'Clayton Swafford','Collin Ferguson','Darryl Green','Donnie Reese','Doug Taylor',
+'Dr ew Mueller','Hussain Aljahmi','Illa Dutson','Jacob Stewart','John Linden',
+'John Pelley','Jonathan Chiang']));
